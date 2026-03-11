@@ -44,14 +44,17 @@ void resetAllCursors(void) {
 
     // Also restore any Arrow synonyms that may have been backed up
     NSArray<NSString *> *synonyms = MCArrowSynonyms();
-    for (NSString *name in synonyms) {
-        restoreCursorForIdentifier(backupStringForIdentifier(name));
+    NSString *firstSynonym = [synonyms firstObject];
+    if (firstSynonym) {
+        restoreCursorForIdentifier(backupStringForIdentifier(firstSynonym));
     }
 
     // And also restore I-beam synonyms
     NSArray<NSString *> *ibeamSynonyms = MCIBeamSynonyms();
-    for (NSString *name in ibeamSynonyms) {
-        restoreCursorForIdentifier(backupStringForIdentifier(name));
+    NSString *firstIBeam = [ibeamSynonyms firstObject];
+
+    if (firstIBeam) {
+        restoreCursorForIdentifier(backupStringForIdentifier(firstIBeam));
     }
 
     // Restore auxiliary/core cursors

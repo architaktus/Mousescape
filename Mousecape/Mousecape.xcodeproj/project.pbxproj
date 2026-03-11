@@ -1242,6 +1242,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon2;
 				CODE_SIGN_ENTITLEMENTS = Mousecape/Mousecape.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
@@ -1271,6 +1272,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon2;
 				CODE_SIGN_ENTITLEMENTS = Mousecape/Mousecape.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
@@ -1300,6 +1302,7 @@
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = ZH759MJF87;
@@ -1331,6 +1334,7 @@
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = ZH759MJF87;
@@ -1361,6 +1365,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;

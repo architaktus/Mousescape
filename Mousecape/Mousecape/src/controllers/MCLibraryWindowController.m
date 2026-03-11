@@ -9,6 +9,7 @@
 #import "MCLibraryWindowController.h"
 
 @interface MCLibraryWindowController ()
+@property (nonatomic, strong) NSTitlebarAccessoryViewController *accessoryVC;
 - (void)composeAccessory;
 @end
 
@@ -36,31 +37,30 @@
 }
 
 - (void)composeAccessory {
-    NSView *themeFrame = [self.window.contentView superview];
-    NSView *accessory = self.appliedAccessory;
-    [accessory setTranslatesAutoresizingMaskIntoConstraints:NO];
+    // 如果已經存在，先從窗口中安全移除
+    if (self.accessoryVC) {
+        [self.window removeTitlebarAccessoryViewControllerAtIndex:[self.window.titlebarAccessoryViewControllers indexOfObject:self.accessoryVC]];
+    }
+
+    // 準備視圖
+    NSView *accessoryView = self.appliedAccessory;
+    if (!accessoryView) return;
+
+    accessoryView.translatesAutoresizingMaskIntoConstraints = NO;
     
-    NSRect c  = themeFrame.frame;
-    NSRect aV = accessory.frame;
-    NSRect newFrame = NSMakeRect(
-                                 c.size.width - aV.size.width,	// x position
-                                 c.size.height - aV.size.height,	// y position
-                                 aV.size.width,	// width
-                                 aV.size.height);	// height
+    // 設定固定寬度（參考你原版代碼中的 245）
+    [accessoryView.widthAnchor constraintEqualToConstant:245].active = YES;
+    [accessoryView.heightAnchor constraintEqualToConstant:20].active = YES;
+
+    // 初始化控制器並配置
+    self.accessoryVC = [[NSTitlebarAccessoryViewController alloc] init];
+    self.accessoryVC.view = accessoryView;
     
-    [accessory setFrame:newFrame];
-    [themeFrame addSubview:accessory];
-    
-    [themeFrame addConstraints:[NSLayoutConstraint
-                                constraintsWithVisualFormat:@"H:|-(>=100)-[accessory(245)]-(0)-|"
-                                options:0
-                                metrics:nil
-                                views:NSDictionaryOfVariableBindings(accessory)]];
-    [themeFrame addConstraints:[NSLayoutConstraint
-                                constraintsWithVisualFormat:@"V:|-(0)-[accessory(20)]-(>=22)-|"
-                                options:0
-                                metrics:nil
-                                views:NSDictionaryOfVariableBindings(accessory)]];
+    // NSLayoutAttributeRight 對應原版的靠右對齊
+    self.accessoryVC.layoutAttribute = NSLayoutAttributeRight;
+
+    // 添加到窗口
+    [self.window addTitlebarAccessoryViewController:self.accessoryVC];
 }
 
 - (NSUndoManager *)windowWillReturnUndoManager:(NSWindow *)window {
