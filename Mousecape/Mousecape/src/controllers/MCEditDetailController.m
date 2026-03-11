@@ -7,6 +7,7 @@
 //
 
 #import "MCEditDetailController.h"
+#import "MCDefs.h"
 
 @interface MCEditDetailController ()
 
@@ -66,7 +67,8 @@
 - (void)imageView:(MMAnimatingImageView *)imageView didAcceptDroppedImages:(NSArray *)images {
     MCCursorScale scale = cursorScaleForScale(imageView.scale);
     
-    if (NSEvent.modifierFlags == NSAlternateKeyMask) {
+    // 將 NSAlternateKeyMask 替換為 NSEventModifierFlagOption
+    if ((NSEvent.modifierFlags & NSEventModifierFlagOption) != 0) {
         [self.cursor addFrame:[MCCursor composeRepresentationWithFrames:images] forScale:scale];
     } else {
         [self.cursor setRepresentation:[MCCursor composeRepresentationWithFrames:images] forScale:scale];

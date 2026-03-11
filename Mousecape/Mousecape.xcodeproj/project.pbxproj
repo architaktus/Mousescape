@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		95AAC81A2F614FB100BC9D27 /* UniformTypeIdentifiers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95AAC8192F614FB100BC9D27 /* UniformTypeIdentifiers.framework */; };
+		95AAC81B2F614FF300BC9D27 /* UniformTypeIdentifiers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95AAC8192F614FB100BC9D27 /* UniformTypeIdentifiers.framework */; };
 		FA04886C189F58B1001F3AB5 /* Edit.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA048868189F58B1001F3AB5 /* Edit.xib */; };
 		FA04886D189F58B1001F3AB5 /* Library.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA04886A189F58B1001F3AB5 /* Library.xib */; };
 		FA1DC01919527A73009E879C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA359844189DBA3800288163 /* SystemConfiguration.framework */; };
@@ -233,6 +235,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		95AAC8192F614FB100BC9D27 /* UniformTypeIdentifiers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UniformTypeIdentifiers.framework; path = System/Library/Frameworks/UniformTypeIdentifiers.framework; sourceTree = SDKROOT; };
 		FA048869189F58B1001F3AB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Edit.xib; sourceTree = "<group>"; };
 		FA04886B189F58B1001F3AB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Library.xib; sourceTree = "<group>"; };
 		FA1DC01719527A56009E879C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -369,6 +372,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95AAC81A2F614FB100BC9D27 /* UniformTypeIdentifiers.framework in Frameworks */,
 				FAAEF8F7189EB34700145DF8 /* QuartzCore.framework in Frameworks */,
 				FA35984D189DC55A00288163 /* ServiceManagement.framework in Frameworks */,
 				FA901D002C437ADD006983AA /* Sparkle.framework in Frameworks */,
@@ -381,6 +385,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95AAC81B2F614FF300BC9D27 /* UniformTypeIdentifiers.framework in Frameworks */,
 				FA7582B8193D377300CE223C /* ApplicationServices.framework in Frameworks */,
 				FA359853189E040D00288163 /* SystemConfiguration.framework in Frameworks */,
 				FAC69FDA189D632B00BC829D /* Cocoa.framework in Frameworks */,
@@ -480,6 +485,7 @@
 		FAC69F63189D603C00BC829D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				95AAC8192F614FB100BC9D27 /* UniformTypeIdentifiers.framework */,
 				FA1DC01719527A56009E879C /* CoreGraphics.framework */,
 				FA7582B7193D377300CE223C /* ApplicationServices.framework */,
 				FAAEF8F6189EB34700145DF8 /* QuartzCore.framework */,

@@ -34,7 +34,7 @@ void backupCursorForIdentifier(NSString *ident) {
     
 }
 
-void backupAllCursors() {
+void backupAllCursors(void) {
     bool arrowRegistered = false;
     MCIsCursorRegistered(CGSMainConnectionID(), (char *)backupStringForIdentifier(@"com.apple.coregraphics.Arrow").UTF8String, &arrowRegistered);
     

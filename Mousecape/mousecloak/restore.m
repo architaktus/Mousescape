@@ -30,7 +30,7 @@ void restoreCursorForIdentifier(NSString *ident) {
     CGSRemoveRegisteredCursor(CGSMainConnectionID(), (char *)ident.UTF8String, false);
 }
 
-void resetAllCursors() {
+void resetAllCursors(void) {
     MMLog("Restoring cursors...");
     
     // Restore main cursors first
