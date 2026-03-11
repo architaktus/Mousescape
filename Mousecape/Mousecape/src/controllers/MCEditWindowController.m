@@ -47,17 +47,28 @@
         return NO;
     }
     
-    NSBeginAlertSheet(
-                      NSLocalizedString(@"Do you want to save your changes?", "Save Prompt Title"),
-                      NSLocalizedString(@"Save", "Save Prompt Button"),
-                      NSLocalizedString(@"Cancel", "Save Prompt Button"),
-                      NSLocalizedString(@"Discard Changes", "Save Prompt Button"),
-                      self.window,
-                      self,
-                      NULL,
-                      @selector(sheetDidDismiss:returnCode:contextInfo:),
-                      (__bridge void *)nextLibrary,
-                      NSLocalizedString(@"Your changes will be discarded if you don't save them.", "Save prompt threat"));
+    // NSAlert 對象
+    NSAlert *alert = [[NSAlert alloc] init];
+    
+    // 標題和說明文字
+    [alert setMessageText:NSLocalizedString(@"Do you want to save your changes?", "Save Prompt Title")];
+    [alert setInformativeText:NSLocalizedString(@"Your changes will be discarded if you don't save them.", "Save prompt threat")];
+    
+    // 添加按鈕 (NSAlert 添加按鈕的順序從右到左)
+    [alert addButtonWithTitle:NSLocalizedString(@"Save", "Save Prompt Button")];
+    [alert addButtonWithTitle:NSLocalizedString(@"Discard Changes", "Save Prompt Button")];
+    [alert addButtonWithTitle:NSLocalizedString(@"Cancel", "Save Prompt Button")];
+
+    // 以 Sheet 形式彈出
+    [alert beginSheetModalForWindow:self.window completionHandler:^(NSModalResponse returnCode) {
+        if (returnCode == NSAlertFirstButtonReturn) { // Save
+            [self saveDocument:nil];
+            self.editListController.cursorLibrary = nextLibrary;
+        } else if (returnCode == NSAlertSecondButtonReturn) { // Discard
+            self.editListController.cursorLibrary = nextLibrary;
+        }
+    }];
+    
     return YES;
 }
 
