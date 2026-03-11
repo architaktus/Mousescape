@@ -1,5 +1,10 @@
 Mousecape
 ===
+Fix：
+- Tahoe Support include M- & Intel-Chip 
+- UI Bugs
+
+===
 
 A free cursor manager for Mac OS 10.8+ built using private, nonintrusive CoreGraphics APIs.
 
